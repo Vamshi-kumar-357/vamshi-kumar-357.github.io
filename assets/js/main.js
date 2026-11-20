@@ -53,6 +53,10 @@ function initTerminal() {
 <div class="grid grid-cols-1 md:grid-cols-2 gap-1 text-xs">
   <div><span class="text-emerald-400">aarna</span> - Inspect Aarna Multi-Model Avatar Architecture</div>
   <div><span class="text-emerald-400">vision</span> - Inspect Smart Medical Vision Workstation</div>
+  <div><span class="text-emerald-400">strawberry</span> - Handwritten plant-tag OCR pipeline</div>
+  <div><span class="text-emerald-400">avantor</span> - Specimen tray placement verification</div>
+  <div><span class="text-emerald-400">kitchen</span> - Food inventory tracking &amp; forecasting</div>
+  <div><span class="text-emerald-400">projects</span> - List all 10 case studies</div>
   <div><span class="text-emerald-400">paper</span> - Read Springer Nature Publication Details</div>
   <div><span class="text-emerald-400">stack</span> - Display Full Production AI / Cloud Stack</div>
   <div><span class="text-emerald-400">contact</span> - Output Direct Contact Channels</div>
@@ -77,6 +81,44 @@ function initTerminal() {
   <div class="text-slate-300 text-xs mt-1"><span class="text-indigo-400">Scale:</span> Generalizes across <span class="text-white font-bold">700K+ Medical Product SKUs</span> with automated OTA deployments via ArgoCD.</div>
 </div>`,
 
+    strawberry: `
+<div class="border-l-2 border-rose-400 pl-3 py-1 my-1">
+  <div class="text-rose-300 font-bold">🍓 Project: Strawberry Fields - Handwritten Plant-Tag Digitization</div>
+  <div class="text-slate-300 text-xs mt-1"><span class="text-slate-400">Problem:</span> Harvest staff hand-copied every plant tag (ID, planting date, barcode, org, handwritten weight log).</div>
+  <div class="text-slate-300 text-xs mt-1"><span class="text-slate-400">Pipeline:</span> Tablet camera → YOLOv8-OBB (tag + orientation) → YOLOv8 field detector → Google OCR on crops → field mapping → verify &amp; push to DB.</div>
+  <div class="text-slate-300 text-xs mt-1"><span class="text-emerald-400">Impact:</span> <span class="text-white font-bold">96% accuracy</span> across all fields incl. handwriting, <span class="text-white font-bold">40% less documentation time</span>.</div>
+</div>`,
+
+    avantor: `
+<div class="border-l-2 border-indigo-400 pl-3 py-1 my-1">
+  <div class="text-indigo-300 font-bold">🧪 Project: Avantor - Specimen Tray Placement Verification</div>
+  <div class="text-slate-300 text-xs mt-1"><span class="text-slate-400">Problem:</span> Specimen shells must sit in their designated slot on a 6-position tray, and each placement was checked by eye.</div>
+  <div class="text-slate-300 text-xs mt-1"><span class="text-slate-400">Pipeline:</span> YOLO detects box + slot label → fine-tuned YOLO isolates labels → Google OCR → label match.</div>
+  <div class="text-slate-300 text-xs mt-1"><span class="text-emerald-400">Outcome:</span> Mismatches flagged automatically, with the correct slot shown to the operator.</div>
+</div>`,
+
+    kitchen: `
+<div class="border-l-2 border-orange-400 pl-3 py-1 my-1">
+  <div class="text-orange-300 font-bold">🍽️ Project: Hotel Kitchen Inventory &amp; Demand Forecasting</div>
+  <div class="text-slate-300 text-xs mt-1"><span class="text-slate-400">Pipeline:</span> Warmer cameras → custom detection + tracking (97% accuracy) → Firebase real-time → BigQuery action log → next-day / next-week forecast.</div>
+  <div class="text-slate-300 text-xs mt-1"><span class="text-emerald-400">Impact:</span> <span class="text-white font-bold">30% reduction in food wastage</span>.</div>
+</div>`,
+
+    projects: `
+<div class="border-l-2 border-cyan-400 pl-3 py-1 my-1 text-xs text-slate-300 space-y-0.5">
+  <div class="text-cyan-300 font-bold mb-1">📁 Case Studies (10):</div>
+  <div>01 Aarna Conversational Marketplace <span class="text-slate-500">- 1s TTFT avatar agents</span></div>
+  <div>02 Smart Vision Workstation <span class="text-slate-500">- 98.7% OCR, 700K+ SKUs</span></div>
+  <div>03 Gemini Enterprise <span class="text-slate-500">- 30% faster support</span></div>
+  <div>04 Strawberry Fields Tag Digitization <span class="text-slate-500">- 96% handwritten OCR</span></div>
+  <div>05 Avantor Tray Verification <span class="text-slate-500">- 2-stage YOLO + OCR</span></div>
+  <div>06 Kitchen Inventory &amp; Forecasting <span class="text-slate-500">- 30% less food waste</span></div>
+  <div>07 Grab-and-Go Inventory <span class="text-slate-500">- 98.2% tracking</span></div>
+  <div>08 Bone-Screw Defect Detection <span class="text-slate-500">- 0.01 mm precision</span></div>
+  <div>09 AI Project Assistant <span class="text-slate-500">- Claude + LangChain</span></div>
+  <div>10 Jetson Nano Assistive Vision <span class="text-slate-500">- on-device YOLOv5 + MediaPipe</span></div>
+</div>`,
+
     paper: `
 <div class="border-l-2 border-purple-400 pl-3 py-1 my-1">
   <div class="text-purple-300 font-bold">📄 Publication: Springer Nature (DOI: 10.1007/s44230-023-00029-z)</div>
@@ -89,8 +131,9 @@ function initTerminal() {
 <div class="border-l-2 border-amber-400 pl-3 py-1 my-1">
   <div class="text-amber-300 font-bold">🛠️ Production Engineering Stack:</div>
   <div class="text-xs text-slate-300 mt-1"><span class="text-slate-400">Agentic & LLMs:</span> Google ADK, Gemini, LangChain, LangGraph, LiveKit, Simli, RAG, Ollama, Claude, Llama-3</div>
-  <div class="text-xs text-slate-300 mt-1"><span class="text-slate-400">Vision & ML:</span> PyTorch, TensorFlow, OpenCV, YOLO Segmentation, PaddleOCR, DocTR, Hugging Face</div>
-  <div class="text-xs text-slate-300 mt-1"><span class="text-slate-400">Cloud & MLOps:</span> GCP (Vertex AI, Cloud Run, GKE), AWS (SageMaker, EC2), Docker, Kubernetes, ArgoCD, FastAPI</div>
+  <div class="text-xs text-slate-300 mt-1"><span class="text-slate-400">Vision & ML:</span> PyTorch, TensorFlow, OpenCV, YOLOv5/v8 (detection, OBB, segmentation), MediaPipe, PaddleOCR, DocTR, Google OCR, Hugging Face</div>
+  <div class="text-xs text-slate-300 mt-1"><span class="text-slate-400">Cloud & MLOps:</span> GCP (Vertex AI, Cloud Run, GKE, BigQuery), Firebase, AWS (SageMaker, EC2), Docker, Kubernetes, ArgoCD, FastAPI</div>
+  <div class="text-xs text-slate-300 mt-1"><span class="text-slate-400">Edge:</span> NVIDIA Jetson Nano, Roboflow, auto-focus camera rigs</div>
   <div class="text-xs text-slate-300 mt-1"><span class="text-slate-400">Languages:</span> Python (Advanced), C++, SQL, Bash</div>
 </div>`,
 
@@ -98,6 +141,8 @@ function initTerminal() {
 <div class="border-l-2 border-cyan-400 pl-3 py-1 my-1">
   <div class="text-cyan-300 font-bold">📬 Connect with Gurram Vamshi Kumar:</div>
   <div class="text-xs text-slate-300 mt-1">📧 Email: <a href="mailto:vamshikumargurram357@gmail.com" class="text-cyan-400 underline">vamshikumargurram357@gmail.com</a></div>
+  <div class="text-xs text-slate-300 mt-1">💼 LinkedIn: <a href="https://www.linkedin.com/in/vamshi-kumar-1986631ba/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline">linkedin.com/in/vamshi-kumar-1986631ba</a></div>
+  <div class="text-xs text-slate-300 mt-1">🐙 GitHub: <a href="https://github.com/Vamshi-kumar-357" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline">github.com/Vamshi-kumar-357</a></div>
   <div class="text-xs text-slate-300 mt-1">📍 Location: Hyderabad, India (Open to Relocation / Remote AI roles)</div>
 </div>`
   };
@@ -165,10 +210,22 @@ function escapeHTML(str) {
    Project Category Filter
    ========================================================================== */
 function initProjectFilters() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  // Scope to [data-filter] only: the terminal quick-run chips share the
+  // .filter-btn style but are not project filters.
+  const filterBtns = document.querySelectorAll('[data-filter]');
   const projectCards = document.querySelectorAll('.project-card');
 
   if (!filterBtns.length || !projectCards.length) return;
+
+  // Fill each filter's project count from the cards themselves
+  filterBtns.forEach((btn) => {
+    const filter = btn.getAttribute('data-filter');
+    const count = filter === 'all'
+      ? projectCards.length
+      : [...projectCards].filter((c) => (c.getAttribute('data-category') || '').split(' ').includes(filter)).length;
+    const slot = btn.querySelector('.filter-count');
+    if (slot) slot.textContent = `(${count})`;
+  });
 
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -180,7 +237,7 @@ function initProjectFilters() {
       projectCards.forEach((card) => {
         const categories = (card.getAttribute('data-category') || '').split(' ');
         if (filter === 'all' || categories.includes(filter)) {
-          card.style.display = 'block';
+          card.style.display = '';
           card.style.animation = 'fadeIn 0.35s ease-out';
         } else {
           card.style.display = 'none';

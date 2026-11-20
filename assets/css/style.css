@@ -264,6 +264,190 @@ body {
   background: rgba(56, 189, 248, 0.06);
 }
 
+/* ==========================================================================
+   Project Case-Study Cards
+   Each card sets its own --accent inline; everything below derives from it.
+   ========================================================================== */
+.project-card {
+  --accent: #22d3ee;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent 85%);
+  opacity: 0.85;
+}
+
+.project-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  box-shadow: 0 18px 40px -18px color-mix(in srgb, var(--accent) 35%, transparent);
+  transform: translateY(-2px);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.card-org {
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  white-space: nowrap;
+}
+
+.card-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.card-summary {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.impact-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.impact-stat {
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.65rem;
+  background: color-mix(in srgb, var(--accent) 6%, rgba(2, 6, 23, 0.5));
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.impact-stat .val {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.35rem;
+  line-height: 1.1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.impact-stat .lbl {
+  margin-top: 0.25rem;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.card-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.card-points li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.card-points li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.card-points strong {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.6rem;
+  margin-bottom: 1.1rem;
+  border-radius: 0.6rem;
+  background: rgba(2, 6, 23, 0.55);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+}
+
+.pipeline .step {
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.35rem;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  white-space: nowrap;
+}
+
+.pipeline .step.hl {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.pipeline .arrow {
+  color: #475569;
+}
+
+.card-tags {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.filter-count {
+  margin-left: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card:hover,
+  .metric-box:hover { transform: none; }
+  .status-dot::after { animation: none; }
+}
+
 /* Floating Metric Counter */
 .metric-box {
   background: rgba(15, 23, 42, 0.6);
