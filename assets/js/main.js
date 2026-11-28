@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initMobileMenu();
   initTerminal();
   initProjectFilters();
@@ -12,6 +13,36 @@ document.addEventListener('DOMContentLoaded', () => {
   initNumberCounters();
   initContactForm();
 });
+
+/* ==========================================================================
+   Light / Dark Theme Toggle
+   Light is the default. The choice is saved per browser; the inline script
+   in <head> applies it before first paint.
+   ========================================================================== */
+function initThemeToggle() {
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('[data-theme-toggle]');
+  if (!buttons.length) return;
+
+  const syncLabels = () => {
+    const isLight = root.getAttribute('data-theme') === 'light';
+    buttons.forEach((btn) => {
+      btn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+      btn.setAttribute('aria-pressed', String(isLight));
+    });
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked: theme still applies for this visit */ }
+      syncLabels();
+    });
+  });
+
+  syncLabels();
+}
 
 /* ==========================================================================
    Toast Notification System

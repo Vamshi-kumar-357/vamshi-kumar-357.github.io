@@ -13,6 +13,7 @@
     body {
       font-family: 'Inter', sans-serif;
     }
+    @page { size: A4; margin: 12mm 14mm; }
     @media print {
       .no-print { display: none !important; }
       body { background: white !important; color: black !important; }
@@ -21,22 +22,26 @@
     }
   </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen py-8 px-4 sm:px-6">
+<body class="bg-slate-100 text-slate-900 min-h-screen py-8 px-4 sm:px-6">
 
   <!-- Top Floating Controls (Screen Only) -->
   <div class="max-w-4xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-4 no-print">
-    <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 text-sm font-medium transition-colors border border-slate-700">
+    <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white hover:bg-slate-50 text-cyan-700 text-sm font-medium transition-colors border border-slate-200 shadow-sm">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
       Back to Portfolio
     </a>
 
     <div class="flex items-center gap-3">
-      <button onclick="window.print()" class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-cyan-500/20">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-        Print / Save as PDF
+      <a href="assets/Gurram_Vamshi_Kumar_Resume.pdf" download class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm transition-all shadow-md shadow-cyan-500/20">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"></path></svg>
+        Download PDF
+      </a>
+      <button onclick="window.print()" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-sm font-medium transition-colors border border-slate-200 shadow-sm">
+        <svg class="w-4 h-4 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print
       </button>
-      <a href="mailto:vamshikumargurram357@gmail.com" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium transition-colors border border-slate-700">
-        <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+      <a href="mailto:vamshikumargurram357@gmail.com" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-sm font-medium transition-colors border border-slate-200 shadow-sm">
+        <svg class="w-4 h-4 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
         Contact Direct
       </a>
     </div>
@@ -229,7 +234,7 @@
   </main>
 
   <footer class="text-center mt-8 text-xs text-slate-500 no-print">
-    Gurram Vamshi Kumar • ATS-Optimized Clean Resume • <a href="index.html" class="text-cyan-400 hover:underline">Portfolio Homepage</a>
+    Gurram Vamshi Kumar • ATS-Optimized Clean Resume • <a href="index.html" class="text-cyan-700 hover:underline">Portfolio Homepage</a>
   </footer>
 
 </body>
